@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" (click)="togglePaciente()">
+              <i class="bi bi-person-fill"></i> Pacientes
+            </a>
+            <ul class="nav flex-column ms-3" *ngIf="isPacienteOpen">
+              <li class="nav-item">
+                <a class="nav-link small-text" href="#">
+                  <i class="bi bi-person-plus"></i>
+                  Cadastrar Paciente
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link small-text" href="#">
+                  <i class="bi bi-pencil-square navSubItem"></i>
+                  Editar Paciente
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-file-earmark-text"></i> Visualizar Prontuário
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toggleTelemedicina()">
+              <i class="bi bi-telephone-fill"></i> Telemedicina
+            </a>
+            <ul class="nav flex-column ms-3" *ngIf="isTelemedicinaOpen">
+              <li class="nav-item">
+                <a class="nav-link small-text" href="#">
+                  <i class="bi bi-calendar-plus"></i>
+                  Realizar Agendamento
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link small-text" href="#">
+                  <i class="bi bi-calendar-check"></i>
+                  Consultar Agendamento
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-center align-items-center vh-100">
+        <h1 class="text-center">Tela de gerenciamento</h1>
+      </div>
+    </main>
+  </div>
+</div>
