@@ -1,0 +1,47 @@
+<div class="d-flex">
+  <app-sidebar></app-sidebar>
+
+  <div class="container-fluid">
+    <h2>Consultar Pacientes</h2>
+
+    <!-- Filtro de pesquisa -->
+    <div class="mb-3">
+      <label for="nomeFiltro" class="form-label">Filtrar por Nome</label>
+      <input id="nomeFiltro" type="text" class="form-control" [(ngModel)]="filtroNome"
+        placeholder="Digite o nome do paciente" />
+    </div>
+
+    <!-- Tabela de pacientes -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Data de Nascimento</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paciente of pacientesFiltrados(); let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ paciente.nome }}</td>
+          <td>{{ paciente.email }}</td>
+          <td>{{ paciente.telefone }}</td>
+          <td>{{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</td>
+          <td class="action-buttons">
+            <!-- Botões de editar e excluir -->
+            <button [routerLink]="['/editar-paciente', paciente.id]" class="btn btn-warning btn-sm">
+              <i class="fas fa-pencil-alt"></i>
+            </button>
+
+            <button (click)="excluirPaciente(paciente)" class="btn btn-danger btn-sm">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
