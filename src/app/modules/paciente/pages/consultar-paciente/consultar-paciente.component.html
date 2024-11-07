@@ -24,26 +24,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let paciente of pacientesFiltrados(); let i = index">
+        <tr *ngFor="let paciente of pacientesPaginaAtual(); let i = index">
           <td>{{ i + 1 }}</td>
           <td>{{ paciente.nome }}</td>
           <td>{{ paciente.email }}</td>
           <td>{{ paciente.telefone }}</td>
           <td>{{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</td>
           <td class="action-buttons">
-            <!-- Botões de editar, excluir, visualizar prontuário e realizar agendamento -->
             <button [routerLink]="['/editar-paciente', paciente.id]" class="btn btn-warning btn-sm">
               <i class="fas fa-pencil-alt"></i>
             </button>
-
             <button (click)="excluirPaciente(paciente)" class="btn btn-danger btn-sm">
               <i class="fas fa-trash-alt"></i>
             </button>
-
             <button [routerLink]="['/visualizar-prontuario', paciente.id]" class="btn btn-info btn-sm">
               <i class="fas fa-file-alt"></i>
             </button>
-
             <button [routerLink]="['/realizar-agendamento', paciente.id]" class="btn btn-primary btn-sm">
               <i class="fas fa-calendar-alt"></i>
             </button>
@@ -51,5 +47,13 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Controles de Navegação -->
+    <div class="pagination-controls text-center mt-4">
+      <button (click)="prevPage()" class="btn btn-secondary" [disabled]="currentPage === 1">Anterior</button>
+      <span class="mx-3">Página {{ currentPage }}</span>
+      <button (click)="nextPage()" class="btn btn-secondary"
+        [disabled]="currentPage * pageSize >= pacientesFiltrados().length">Próxima</button>
+    </div>
   </div>
 </div>
