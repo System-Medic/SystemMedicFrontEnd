@@ -5,10 +5,10 @@
 }
 
 /* Título */
-h2 {
-  text-align: center;
+h1 {
+  text-align: start;
   margin-bottom: 20px;
-  font-size: 26px;
+  font-size: 35px;
   font-weight: 600;
   color: #333;
 }
@@ -75,7 +75,7 @@ table tbody tr:hover {
 /* Estilo dos botões */
 .action-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 10px;
 }
 
@@ -99,24 +99,41 @@ button i {
 
 /* Estilo do botão de editar */
 .btn-warning {
-  background-color: #ffc107;
+  background-color: orange;
   color: white;
-}
-
-.btn-warning:hover {
-  background-color: #e0a800;
-  transform: scale(1.1);
 }
 
 /* Estilo do botão de excluir */
 .btn-danger {
-  background-color: #dc3545;
+  background-color: red;
   color: white;
 }
 
-.btn-danger:hover {
-  background-color: #c82333;
-  transform: scale(1.1);
+/* Estilo do botão de visualizar prontuário */
+.btn-prontuario {
+  background-color: blue;
+  color: white;
+}
+
+/* Estilo do botão de realizar agendamento */
+.btn-agendamento {
+  background-color: green;
+  color: white;
+}
+
+.btn-hover:hover {
+  opacity: 7.0;
+  transform: scale(1.4);
+}
+
+.btn-anterior {
+  background-color: red;
+  color: white;
+}
+
+.btn-proximo {
+  background-color: blue;
+  color: white;
 }
 
 /* Botões de navegação */
