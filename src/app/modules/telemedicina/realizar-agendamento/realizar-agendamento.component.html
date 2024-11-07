@@ -1,88 +1,90 @@
-<div class="d-flex">
+<div class="d-flex flex-row">
   <app-sidebar></app-sidebar>
 
   <div class="container mt-4">
-    <h2 class="mb-4">Realizar Agendamento</h2>
+    <h2 class="mb-4 text-center">Realizar Agendamento</h2>
 
     <form (ngSubmit)="onSubmit()" #agendamentoForm="ngForm">
-
       <div class="row mb-3">
         <!-- Profissional -->
         <div class="col-md-6">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Profissional</mat-label>
-            <mat-select [(ngModel)]="agendamento.profissional" name="profissional"
-              placeholder="Selecione um Profissional" required>
-              <mat-option *ngFor="let profissional of profissionais" [value]="profissional">
-                {{ profissionais}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="profissional" class="form-label">Profissional</label>
+          <select id="profissional" class="form-select" [(ngModel)]="agendamento.profissional" name="profissional"
+            #profissional="ngModel" required>
+            <option *ngFor="let profissional of profissionais" [ngValue]="profissional.nome">
+              {{ profissional.nome }}
+            </option>
+          </select>
+          <div *ngIf="!profissional.valid && profissional.touched" class="text-danger">
+            O campo Profissional é obrigatório.
+          </div>
         </div>
 
         <!-- Paciente -->
         <div class="col-md-6">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Paciente</mat-label>
-            <mat-select [(ngModel)]="agendamento.paciente" name="paciente" placeholder="Selecione um Paciente" required>
-              <mat-option *ngFor="let paciente of pacientes" [value]="paciente">
-                {{ pacientes }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="paciente" class="form-label">Paciente</label>
+          <select id="paciente" class="form-select" [(ngModel)]="agendamento.paciente" name="paciente"
+            #paciente="ngModel" required>
+            <option *ngFor="let paciente of pacientes" [ngValue]="paciente.nome">
+              {{ paciente.nome }}
+            </option>
+          </select>
+          <div *ngIf="!paciente.valid && paciente.touched" class="text-danger">
+            O campo Paciente é obrigatório.
+          </div>
         </div>
       </div>
 
+      <!-- Data -->
       <div class="row mb-3">
-        <!-- Data -->
         <div class="col-md-4">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Data</mat-label>
-            <input matInput type="date" [(ngModel)]="agendamento.data" name="data" required>
-          </mat-form-field>
+          <label for="data" class="form-label">Data</label>
+          <input type="date" id="data" class="form-control" [(ngModel)]="agendamento.data" name="data" required />
         </div>
 
         <!-- Horário de Início -->
         <div class="col-md-4">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Horário de Início</mat-label>
-            <input matInput type="time" [(ngModel)]="agendamento.inicio" name="inicio" required>
-          </mat-form-field>
+          <label for="inicio" class="form-label">Horário de Início</label>
+          <input type="time" id="inicio" class="form-control" [(ngModel)]="agendamento.inicio" name="inicio" required />
         </div>
 
         <!-- Horário de Fim -->
         <div class="col-md-4">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Horário de Fim</mat-label>
-            <input matInput type="time" [(ngModel)]="agendamento.fim" name="fim" required>
-          </mat-form-field>
+          <label for="fim" class="form-label">Horário de Fim</label>
+          <input type="time" id="fim" class="form-control" [(ngModel)]="agendamento.fim" name="fim" required />
         </div>
       </div>
 
+      <!-- Diagnóstico -->
       <div class="row mb-3">
-        <!-- Diagnóstico -->
         <div class="col-md-6">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Diagnóstico</mat-label>
-            <textarea matInput [(ngModel)]="agendamento.diagnostico" name="diagnostico" rows="4"></textarea>
-          </mat-form-field>
+          <label for="diagnostico" class="form-label">Diagnóstico</label>
+          <textarea id="diagnostico" class="form-control" [(ngModel)]="agendamento.diagnostico" name="diagnostico"
+            rows="4"></textarea>
         </div>
 
         <!-- Observação -->
         <div class="col-md-6">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Observação</mat-label>
-            <textarea matInput [(ngModel)]="agendamento.observacao" name="observacao" rows="4"></textarea>
-          </mat-form-field>
+          <label for="observacao" class="form-label">Observação</label>
+          <textarea id="observacao" class="form-control" [(ngModel)]="agendamento.observacao" name="observacao"
+            rows="4"></textarea>
         </div>
       </div>
 
+<!-- Notificação -->
+<div class="form-check mb-3">
+  <input class="form-check-input" type="checkbox" id="notificar" [(ngModel)]="agendamento.notificar" name="notificar" />
+  <label class="form-check-label" for="notificar">
+    Notificar paciente por e-mail
+  </label>
+</div>
+
       <!-- Botão de Submissão -->
-      <div class="d-flex justify-content-center">
-        <button mat-raised-button color="primary" type="submit" [disabled]="!agendamentoForm.form.valid">Agendar
-          Atendimento</button>
+      <div class="d-flex justify-content-center mt-4">
+        <button class="btn btn-primary w-100" type="submit" [disabled]="!agendamentoForm.form.valid">
+          Agendar Atendimento
+        </button>
       </div>
     </form>
   </div>
 </div>
-
