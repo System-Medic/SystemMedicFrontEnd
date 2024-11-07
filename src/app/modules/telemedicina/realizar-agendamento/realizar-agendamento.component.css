@@ -1,16 +1,21 @@
-h2 {
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  button {
-    margin-top: 20px;
-  }
-  
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+button[type="submit"] {
+  max-width: 200px;
+}
+
+/* Ajustes para o dropdown com Bootstrap */
+.form-select {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+}
+
+.form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
