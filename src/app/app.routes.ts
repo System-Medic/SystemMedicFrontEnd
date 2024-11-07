@@ -6,6 +6,7 @@ import { ConsultarAgendamentoComponent } from './modules/telemedicina/consultar-
 import { CadastrarPacienteComponent } from './modules/paciente/pages/cadastrar-paciente/cadastrar-paciente.component';
 import { EditarPacienteComponent } from './modules/paciente/pages/editar-paciente/editar-paciente.component';
 import { ConsultarPacienteComponent } from './modules/paciente/pages/consultar-paciente/consultar-paciente.component';
+import { VisualizarProntuarioComponent } from './modules/paciente/pages/visualizar-prontuario/visualizar-prontuario.component';
 
 
 export const routes: Routes = [
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: 'cadastrar-paciente', component: CadastrarPacienteComponent },
   { path: 'editar-paciente/:id', component: EditarPacienteComponent },
   { path: 'consultar-paciente', component: ConsultarPacienteComponent },
+  { path: 'visualizar-prontuario/:id', component: VisualizarProntuarioComponent },
 
 ];
