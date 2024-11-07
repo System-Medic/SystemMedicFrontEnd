@@ -1,0 +1,5 @@
+.img-home {
+    max-width: 75%;  /* Limita a largura máxima para o tamanho do contêiner */
+    height: auto;     /* Mantém a proporção da imagem */
+    margin-left: 95px;
+}
