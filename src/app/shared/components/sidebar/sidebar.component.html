@@ -27,28 +27,9 @@
         </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="bi bi-file-earmark-medical-fill"></i> Visualizar Prontuário
+        <a class="nav-link" routerLink="/consultar-agendamento">
+          <i class="bi bi-calendar-check"></i> Agenda
         </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="toggleTelemedicina()">
-          <i class="bi bi-telephone-fill"></i> Telemedicina
-        </a>
-        <ul class="nav flex-column ms-3" *ngIf="isTelemedicinaOpen">
-          <li class="nav-item">
-            <a class="nav-link small-text" href="realizar-agendamento">
-              <i class="bi bi-calendar-plus"></i>
-              Realizar Agendamento
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link small-text" href="consultar-agendamento">
-              <i class="bi bi-calendar-check"></i>
-              Consultar Agendamento
-            </a>
-          </li>
-        </ul>
       </li>
     </ul>
   </div>
