@@ -1,0 +1,88 @@
+<div class="d-flex">
+  <app-sidebar></app-sidebar>
+
+  <div class="container mt-4">
+    <h2 class="mb-4">Realizar Agendamento</h2>
+
+    <form (ngSubmit)="onSubmit()" #agendamentoForm="ngForm">
+
+      <div class="row mb-3">
+        <!-- Profissional -->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Profissional</mat-label>
+            <mat-select [(ngModel)]="agendamento.profissional" name="profissional"
+              placeholder="Selecione um Profissional" required>
+              <mat-option *ngFor="let profissional of profissionais" [value]="profissional">
+                {{ profissionais}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- Paciente -->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Paciente</mat-label>
+            <mat-select [(ngModel)]="agendamento.paciente" name="paciente" placeholder="Selecione um Paciente" required>
+              <mat-option *ngFor="let paciente of pacientes" [value]="paciente">
+                {{ pacientes }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <!-- Data -->
+        <div class="col-md-4">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Data</mat-label>
+            <input matInput type="date" [(ngModel)]="agendamento.data" name="data" required>
+          </mat-form-field>
+        </div>
+
+        <!-- Horário de Início -->
+        <div class="col-md-4">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Horário de Início</mat-label>
+            <input matInput type="time" [(ngModel)]="agendamento.inicio" name="inicio" required>
+          </mat-form-field>
+        </div>
+
+        <!-- Horário de Fim -->
+        <div class="col-md-4">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Horário de Fim</mat-label>
+            <input matInput type="time" [(ngModel)]="agendamento.fim" name="fim" required>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <!-- Diagnóstico -->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Diagnóstico</mat-label>
+            <textarea matInput [(ngModel)]="agendamento.diagnostico" name="diagnostico" rows="4"></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- Observação -->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Observação</mat-label>
+            <textarea matInput [(ngModel)]="agendamento.observacao" name="observacao" rows="4"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- Botão de Submissão -->
+      <div class="d-flex justify-content-center">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!agendamentoForm.form.valid">Agendar
+          Atendimento</button>
+      </div>
+    </form>
+  </div>
+</div>
+
