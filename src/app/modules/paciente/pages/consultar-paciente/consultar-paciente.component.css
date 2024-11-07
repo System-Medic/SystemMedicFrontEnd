@@ -119,6 +119,35 @@ button i {
   transform: scale(1.1);
 }
 
+/* Botões de navegação */
+.pagination-controls button {
+  padding: 10px 20px;
+  /* Ajuste do padding para garantir botões proporcionais */
+  border-radius: 50%;
+  /* Garante que os botões fiquem redondos */
+  font-size: 16px;
+  /* Ajusta o tamanho da fonte para que se encaixe bem */
+  display: inline-flex;
+  /* Para garantir que o conteúdo do botão fique bem alinhado */
+  align-items: center;
+  /* Alinha os itens dentro do botão */
+  justify-content: center;
+  /* Centraliza o conteúdo do botão */
+  border-radius: 10px;
+}
+
+
+.pagination-controls span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pagination-controls button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
 /* Responsividade */
 @media (max-width: 767px) {
   table {
