@@ -2,10 +2,10 @@
   <app-sidebar></app-sidebar>
 
   <div class="container-fluid">
-    <h2>Consultar Pacientes</h2>
+    <h1>Consultar Pacientes</h1>
 
     <!-- Filtro de pesquisa -->
-    <div class="mb-3">
+    <div class="mb-3 mt-4">
       <label for="nomeFiltro" class="form-label">Filtrar por Nome</label>
       <input id="nomeFiltro" type="text" class="form-control" [(ngModel)]="filtroNome"
         placeholder="Digite o nome do paciente" />
@@ -31,17 +31,17 @@
           <td>{{ paciente.telefone }}</td>
           <td>{{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</td>
           <td class="action-buttons">
-            <button [routerLink]="['/editar-paciente', paciente.id]" class="btn btn-warning btn-sm">
+            <button [routerLink]="['/editar-paciente', paciente.id]" class="btn btn-hover btn-warning btn-sm">
               <i class="fas fa-pencil-alt"></i>
             </button>
-            <button (click)="excluirPaciente(paciente)" class="btn btn-danger btn-sm">
-              <i class="fas fa-trash-alt"></i>
-            </button>
-            <button [routerLink]="['/visualizar-prontuario', paciente.id]" class="btn btn-info btn-sm">
+            <button [routerLink]="['/visualizar-prontuario', paciente.id]" class="btn btn-hover btn-prontuario btn-sm">
               <i class="fas fa-file-alt"></i>
             </button>
-            <button [routerLink]="['/realizar-agendamento', paciente.id]" class="btn btn-primary btn-sm">
+            <button [routerLink]="['/realizar-agendamento', paciente.id]" class="btn btn-hover btn-agendamento btn-sm">
               <i class="fas fa-calendar-alt"></i>
+            </button>
+            <button (click)="excluirPaciente(paciente)" class="btn btn-hover btn-danger btn-sm">
+              <i class="fas fa-trash-alt"></i>
             </button>
           </td>
         </tr>
@@ -50,9 +50,9 @@
 
     <!-- Controles de Navegação -->
     <div class="pagination-controls text-center mt-4">
-      <button (click)="prevPage()" class="btn btn-secondary" [disabled]="currentPage === 1">Anterior</button>
+      <button (click)="prevPage()" class="btn btn-anterior" [disabled]="currentPage === 1">Anterior</button>
       <span class="mx-3">Página {{ currentPage }}</span>
-      <button (click)="nextPage()" class="btn btn-secondary"
+      <button (click)="nextPage()" class="btn btn-proximo"
         [disabled]="currentPage * pageSize >= pacientesFiltrados().length">Próxima</button>
     </div>
   </div>
