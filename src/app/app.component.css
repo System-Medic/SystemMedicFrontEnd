@@ -1,0 +1,11 @@
+/* Layout geral */
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* Conteúdo */
+.content {
+    padding-top: 30px;
+    flex-grow: 1;
+}
