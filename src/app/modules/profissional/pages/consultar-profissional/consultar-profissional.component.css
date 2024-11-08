@@ -1,32 +1,3 @@
-/* Container geral */
-.container-fluid {
-  margin-top: 40px;
-  padding: 20px;
-}
-
-/* Título */
-h1 {
-  text-align: start;
-  margin-bottom: 20px;
-  font-size: 35px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Filtro de nome */
-.mb-3 {
-  max-width: 350px;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.form-label {
-  font-weight: 600;
-  color: #495057;
-  margin-bottom: 8px;
-}
 
 .form-control {
   border-radius: 16px;
@@ -93,47 +64,8 @@ button {
 }
 
 button i {
-  font-size: 16px;
+  font-size: 16px !important;
   /* Ícones menores */
-}
-
-/* Estilo do botão de editar */
-.btn-warning {
-  background-color: orange;
-  color: white;
-}
-
-/* Estilo do botão de excluir */
-.btn-danger {
-  background-color: red;
-  color: white;
-}
-
-/* Estilo do botão de visualizar prontuário */
-.btn-prontuario {
-  background-color: blue;
-  color: white;
-}
-
-/* Estilo do botão de realizar agendamento */
-.btn-agendamento {
-  background-color: green;
-  color: white;
-}
-
-.btn-hover:hover {
-  opacity: 7.0;
-  transform: scale(1.4);
-}
-
-.btn-anterior {
-  background-color: red;
-  color: white;
-}
-
-.btn-proximo {
-  background-color: blue;
-  color: white;
 }
 
 /* Botões de navegação */
@@ -153,7 +85,6 @@ button i {
   border-radius: 10px;
 }
 
-
 .pagination-controls span {
   font-size: 16px;
   font-weight: bold;
@@ -162,29 +93,4 @@ button i {
 .pagination-controls button[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-
-/* Responsividade */
-@media (max-width: 767px) {
-  table {
-    font-size: 12px;
-  }
-
-  th,
-  td {
-    padding: 8px;
-  }
-
-  button {
-    font-size: 14px;
-  }
-
-  button i {
-    font-size: 14px;
-  }
-
-  .mb-3 {
-    max-width: 100%;
-  }
 }

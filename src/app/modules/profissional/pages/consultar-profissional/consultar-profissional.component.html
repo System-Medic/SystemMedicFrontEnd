@@ -1,8 +1,10 @@
-<div class="d-flex">
+<div class="d-flex flw-row">
   <app-sidebar></app-sidebar>
 
-  <div class="container-fluid">
-    <h1 class="text-center mb-4">Consultar Profissionais</h1>
+  <div class="container mt-5">
+    <div class="card shadow- p-4">
+
+    <h2 class="text-center mb-4">Consultar Profissionais</h2>
 
     <!-- Filtro de pesquisa -->
     <div class="mb-3 mt-4">
@@ -44,9 +46,9 @@
 
     <!-- Controles de Navegação -->
     <div class="pagination-controls text-center mt-4">
-      <button (click)="prevPage()" class="btn btn-anterior" [disabled]="currentPage === 1">Anterior</button>
+      <button (click)="prevPage()" class="btn btn-red" [disabled]="currentPage === 1">Anterior</button>
       <span class="mx-3">Página {{ currentPage }}</span>
-      <button (click)="nextPage()" class="btn btn-proximo"
+      <button (click)="nextPage()" class="btn btn-blue"
         [disabled]="currentPage * pageSize >= profissionaisFiltrados().length">Próxima</button>
     </div>
   </div>
