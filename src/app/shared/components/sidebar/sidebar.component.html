@@ -1,79 +1,83 @@
 <!-- Sidebar -->
-<nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar mt-2">
-  <div class="position-sticky">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link" href="home">
-          <i class="bi bi-house-door-fill"></i> Início
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/consultar-agendamento">
-          <i class="bi bi-calendar2-plus-fill"></i> Agenda
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="togglePaciente()">
-          <i class="bi bi-person-fill"></i> Paciente
-        </a>
-        <ul class="nav flex-column ms-3" *ngIf="isPacienteOpen">
+<div class="container mt-2">
+  <div class="shadow-lg ">
+    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar mt-2">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link small-text" routerLink="/cadastrar-paciente">
-              <i class="bi bi-person-plus"></i>
-              Cadastrar Paciente
+            <a class="nav-link" href="home">
+              <i class="bi bi-house-door-fill"></i> Início
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link small-text" routerLink="/consultar-paciente">
-              <i class="bi bi-search navSubItem"></i>
-              Consultar Paciente
+            <a class="nav-link" routerLink="/consultar-agendamento">
+              <i class="bi bi-calendar2-plus-fill"></i> Agenda
             </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="togglePaciente()">
+              <i class="bi bi-person-fill"></i> Paciente
+            </a>
+            <ul class="nav flex-column ms-3" *ngIf="isPacienteOpen">
+              <li class="nav-item">
+                <a class="nav-link small-text" routerLink="/cadastrar-paciente">
+                  <i class="bi bi-person-plus"></i>
+                  Cadastrar Paciente
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link small-text" routerLink="/consultar-paciente">
+                  <i class="bi bi-search navSubItem"></i>
+                  Consultar Paciente
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toggleProfissional()">
+              <i class="fas fa-stethoscope"></i> Profissional
+            </a>
+            <ul class="nav flex-column ms-3" *ngIf="isProfissionalOpen">
+              <li class="nav-item">
+                <a class="nav-link small-text" routerLink="/cadastrar-profissional">
+                  <i class="bi bi-person-plus"></i>
+                  Cadastrar Profissional
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link small-text" routerLink="/consultar-profissional">
+                  <i class="bi bi-search navSubItem"></i>
+                  Consultar Profissional
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/consulta-online">
+              <i class="bi bi-camera-video-fill"></i> Consulta On-line
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toggleUsuario()">
+              <i class="bi bi-person-fill-gear"></i> Usuário
+            </a>
+            <ul class="nav flex-column ms-3" *ngIf="isUsuarioOpen">
+              <li class="nav-item">
+                <a class="nav-link small-text" routerLink="/cadastrar-usuario">
+                  <i class="bi bi-person-plus"></i>
+                  Cadastrar Usuário
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link small-text" routerLink="/consultar-usuario">
+                  <i class="bi bi-search navSubItem"></i>
+                  Consultar Usuário
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="toggleProfissional()">
-          <i class="fas fa-stethoscope"></i> Profissional
-        </a>
-        <ul class="nav flex-column ms-3" *ngIf="isProfissionalOpen">
-          <li class="nav-item">
-            <a class="nav-link small-text" routerLink="/cadastrar-profissional">
-              <i class="bi bi-person-plus"></i>
-              Cadastrar Profissional
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link small-text" routerLink="/consultar-profissional">
-              <i class="bi bi-search navSubItem"></i>
-              Consultar Profissional
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/consulta-online">
-          <i class="bi bi-camera-video-fill"></i> Consulta On-line
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="toggleUsuario()">
-          <i class="bi bi-person-fill-gear"></i> Usuário
-        </a>
-        <ul class="nav flex-column ms-3" *ngIf="isUsuarioOpen">
-          <li class="nav-item">
-            <a class="nav-link small-text" routerLink="/cadastrar-usuario">
-              <i class="bi bi-person-plus"></i>
-              Cadastrar Usuário
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link small-text" routerLink="/consultar-usuario">
-              <i class="bi bi-search navSubItem"></i>
-              Consultar Usuário
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+      </div>
+    </nav>
   </div>
-</nav>
+</div>
