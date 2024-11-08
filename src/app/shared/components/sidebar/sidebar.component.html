@@ -31,6 +31,25 @@
           <i class="bi bi-calendar-check"></i> Agenda
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="toggleProfissional()">
+          <i class="bi bi-person"></i> Profissional
+        </a>
+        <ul class="nav flex-column ms-3" *ngIf="isProfissionalOpen">
+          <li class="nav-item">
+            <a class="nav-link small-text" routerLink="/cadastrar-profissional">
+              <i class="bi bi-person-plus"></i>
+              Cadastrar Profissional
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link small-text" routerLink="/consultar-profissional">
+              <i class="bi bi-search navSubItem"></i>
+              Consultar Profissional
+            </a>
+          </li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
