@@ -1,0 +1,53 @@
+<div class="d-flex">
+  <app-sidebar></app-sidebar>
+
+  <div class="container-fluid">
+    <h1 class="text-center mb-4">Consultar Profissionais</h1>
+
+    <!-- Filtro de pesquisa -->
+    <div class="mb-3 mt-4">
+      <label for="nomeFiltro" class="form-label">Filtrar por Nome</label>
+      <input id="nomeFiltro" type="text" class="form-control" [(ngModel)]="filtroNome"
+        placeholder="Digite o nome do profissional" />
+    </div>
+
+    <!-- Tabela de profissionais -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Data de Nascimento</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let profissional of profissionaisPaginaAtual(); let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ profissional.nome }}</td>
+          <td>{{ profissional.email }}</td>
+          <td>{{ profissional.telefone }}</td>
+          <td>{{ profissional.dataNascimento | date: 'dd/MM/yyyy' }}</td>
+          <td class="action-buttons">
+            <button [routerLink]="['/editar-profissional', profissional.id]" class="btn btn-hover btn-warning btn-sm">
+              <i class="fas fa-pencil-alt"></i>
+            </button>
+            <button (click)="excluirprofissional(profissional)" class="btn btn-hover btn-danger btn-sm">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Controles de Navegação -->
+    <div class="pagination-controls text-center mt-4">
+      <button (click)="prevPage()" class="btn btn-anterior" [disabled]="currentPage === 1">Anterior</button>
+      <span class="mx-3">Página {{ currentPage }}</span>
+      <button (click)="nextPage()" class="btn btn-proximo"
+        [disabled]="currentPage * pageSize >= profissionaisFiltrados().length">Próxima</button>
+    </div>
+  </div>
+</div>
