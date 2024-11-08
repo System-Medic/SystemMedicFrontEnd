@@ -93,47 +93,8 @@ button {
 }
 
 button i {
-  font-size: 16px;
+  font-size: 16px !important;
   /* Ícones menores */
-}
-
-/* Estilo do botão de editar */
-.btn-warning {
-  background-color: orange;
-  color: white;
-}
-
-/* Estilo do botão de excluir */
-.btn-danger {
-  background-color: red;
-  color: white;
-}
-
-/* Estilo do botão de visualizar prontuário */
-.btn-prontuario {
-  background-color: blue;
-  color: white;
-}
-
-/* Estilo do botão de realizar agendamento */
-.btn-agendamento {
-  background-color: green;
-  color: white;
-}
-
-.btn-hover:hover {
-  opacity: 7.0;
-  transform: scale(1.4);
-}
-
-.btn-anterior {
-  background-color: red;
-  color: white;
-}
-
-.btn-proximo {
-  background-color: blue;
-  color: white;
 }
 
 /* Botões de navegação */
@@ -152,7 +113,6 @@ button i {
   /* Centraliza o conteúdo do botão */
   border-radius: 10px;
 }
-
 
 .pagination-controls span {
   font-size: 16px;

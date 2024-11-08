@@ -1,8 +1,9 @@
 <div class="d-flex flex-row">
   <app-sidebar></app-sidebar>
 
-  <div class="container mt-4">
-    <h2 class="mb-4 text-center">Realizar Agendamento</h2>
+  <div class="container mt-5">
+    <div class="card shadow-sm p-4">
+    <h2 class="text-center mb-4">Realizar Agendamento</h2>
 
     <form (ngSubmit)="onSubmit()" #agendamentoForm="ngForm">
       <div class="row mb-3">
@@ -84,10 +85,11 @@
 
       <!-- Botão de Submissão -->
       <div class="d-flex justify-content-center mt-4">
-        <button class="btn btn-primary w-100" type="submit" [disabled]="!agendamentoForm.form.valid">
+        <button class="btn btn-blue w-100" type="submit" [disabled]="!agendamentoForm.form.valid">
           Agendar Atendimento
         </button>
       </div>
     </form>
   </div>
+</div>
 </div>

@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.component';
 
+declare var bootstrap: any; 
 @Component({
   selector: 'app-consultar-paciente',
   standalone: true,
@@ -11,14 +13,15 @@ import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.
   templateUrl: './consultar-paciente.component.html',
   styleUrls: ['./consultar-paciente.component.css']
 })
-export class ConsultarPacienteComponent implements OnInit {
+
+export class ConsultarPacienteComponent implements AfterViewInit  {
 
   pacientes: any[] = []; // Array de pacientes
   filtroNome: string = ''; // Valor do filtro de nome
   pageSize: number = 10; // Número de pacientes por página
   currentPage: number = 1; // Página atual
 
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
     this.pacientes = [
@@ -36,6 +39,14 @@ export class ConsultarPacienteComponent implements OnInit {
       { id: 12, nome: 'Juliana Rocha', email: 'juliana@email.com', telefone: '223344556', dataNascimento: '1996-07-11' },
       { id: 13, nome: 'Marcos Silva', email: 'marcos@email.com', telefone: '889977665', dataNascimento: '1980-10-05' },
     ];
+  }
+
+  ngAfterViewInit(): void {
+    // Verifica se está no navegador antes de acessar o DOM
+    if (isPlatformBrowser(this.platformId)) {
+      const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      tooltipTriggerList.map((tooltipTriggerEl: any) => new bootstrap.Tooltip(tooltipTriggerEl));
+    }
   }
 
   // Função para filtrar pacientes
