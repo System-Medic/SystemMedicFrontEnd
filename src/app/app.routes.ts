@@ -10,6 +10,7 @@ import { VisualizarProntuarioComponent } from './modules/paciente/pages/visualiz
 import { CadastrarProfissionalComponent } from './modules/profissional/pages/cadastrar-profissional/cadastrar-profissional.component';
 import { ConsultarProfissionalComponent } from './modules/profissional/pages/consultar-profissional/consultar-profissional.component';
 import { EditarProfissionalComponent } from './modules/profissional/pages/editar-profissional/editar-profissional.component';
+import { ConsultaOnlineComponent } from './modules/telemedicina/pages/consulta-online/consulta-online.component';
 
 
 export const routes: Routes = [
@@ -32,4 +33,7 @@ export const routes: Routes = [
   { path: 'editar-profissional/:id', component: EditarProfissionalComponent },
   { path: 'consultar-profissional', component: ConsultarProfissionalComponent },
 
+  //Telemedicina
+  { path: 'consulta-online', component: ConsultaOnlineComponent },
+  
 ];

@@ -10,7 +10,7 @@ import { filter } from 'rxjs';
   standalone: true,
   imports: [CommonModule, RouterOutlet, SidebarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   showSidebar: boolean = true;

@@ -33,19 +33,19 @@
             <td>{{ paciente.telefone }}</td>
             <td>{{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</td>
             <td class="action-buttons">
-              <button [routerLink]="['/editar-paciente', paciente.id]" class="btn btn-icons btn-hover btn-orange btn-sm"
+              <button [routerLink]="['/editar-paciente', paciente.id]" class="btn btn-icons btn-hover btn-warning btn-sm"
                 data-bs-toggle="tooltip" title="Editar">
                 <i class="fas fa-pencil-alt"></i>
               </button>
-              <button [routerLink]="['/visualizar-prontuario', paciente.id]" class="btn btn-icons btn-hover btn-blue btn-sm"
+              <button [routerLink]="['/visualizar-prontuario', paciente.id]" class="btn btn-icons btn-hover btn-primary btn-sm"
                 data-bs-toggle="tooltip" title="Prontuários">
                 <i class="fas fa-file-alt"></i>
               </button>
-              <button [routerLink]="['/realizar-agendamento', paciente.id]" class="btn btn-icons btn-hover btn-green btn-sm"
+              <button [routerLink]="['/realizar-agendamento', paciente.id]" class="btn btn-icons btn-hover btn-success btn-sm"
                 data-bs-toggle="tooltip" title="Agendamento">
                 <i class="fas fa-calendar-alt"></i>
               </button>
-              <button (click)="excluirPaciente(paciente)" class="btn btn-icons btn-hover btn-red btn-sm" data-bs-toggle="tooltip"
+              <button (click)="excluirPaciente(paciente)" class="btn btn-icons btn-hover btn-danger btn-sm" data-bs-toggle="tooltip"
                 title="Excluir">
                 <i class="fas fa-trash-alt"></i>
               </button>
@@ -56,9 +56,9 @@
 
       <!-- Controles de Navegação -->
       <div class="pagination-controls text-center mt-4">
-        <button (click)="prevPage()" class="btn btn-red" [disabled]="currentPage === 1">Anterior</button>
+        <button (click)="prevPage()" class="btn btn-danger" [disabled]="currentPage === 1">Anterior</button>
         <span class="mx-3">Página {{ currentPage }}</span>
-        <button (click)="nextPage()" class="btn btn-blue"
+        <button (click)="nextPage()" class="btn btn-primary"
           [disabled]="currentPage * pageSize >= pacientesFiltrados().length">Próxima</button>
       </div>
     </div>

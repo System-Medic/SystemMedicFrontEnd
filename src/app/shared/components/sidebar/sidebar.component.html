@@ -9,12 +9,12 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/consultar-agendamento">
-          <i class="bi bi-calendar-check"></i> Agenda
+          <i class="bi bi-calendar2-plus-fill"></i> Agenda
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="togglePaciente()">
-          <i class="bi bi-person-fill"></i> Pacientes
+          <i class="bi bi-person-fill"></i> Paciente
         </a>
         <ul class="nav flex-column ms-3" *ngIf="isPacienteOpen">
           <li class="nav-item">
@@ -49,6 +49,11 @@
             </a>
           </li>
         </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/consulta-online">
+          <i class="bi bi-camera-video-fill"></i> Consulta On-line
+        </a>
       </li>
     </ul>
   </div>

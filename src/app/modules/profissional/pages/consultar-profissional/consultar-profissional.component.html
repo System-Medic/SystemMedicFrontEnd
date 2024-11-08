@@ -33,10 +33,10 @@
           <td>{{ profissional.telefone }}</td>
           <td>{{ profissional.dataNascimento | date: 'dd/MM/yyyy' }}</td>
           <td class="action-buttons">
-            <button [routerLink]="['/editar-profissional', profissional.id]" class="btn btn-hover btn-orange btn-sm">
+            <button [routerLink]="['/editar-profissional', profissional.id]" class="btn btn-hover btn-warning btn-sm">
               <i class="fas fa-pencil-alt"></i>
             </button>
-            <button (click)="excluirprofissional(profissional)" class="btn btn-hover btn-red btn-sm">
+            <button (click)="excluirprofissional(profissional)" class="btn btn-hover btn-danger btn-sm">
               <i class="fas fa-trash-alt"></i>
             </button>
           </td>
@@ -46,9 +46,9 @@
 
     <!-- Controles de Navegação -->
     <div class="pagination-controls text-center mt-4">
-      <button (click)="prevPage()" class="btn btn-red" [disabled]="currentPage === 1">Anterior</button>
+      <button (click)="prevPage()" class="btn btn-danger" [disabled]="currentPage === 1">Anterior</button>
       <span class="mx-3">Página {{ currentPage }}</span>
-      <button (click)="nextPage()" class="btn btn-blue"
+      <button (click)="nextPage()" class="btn btn-primary"
         [disabled]="currentPage * pageSize >= profissionaisFiltrados().length">Próxima</button>
     </div>
   </div>
