@@ -49,6 +49,14 @@ export class ConsultarPacienteComponent implements AfterViewInit  {
     }
   }
 
+  hideTooltip(event?: Event): void {
+    if (event) {
+        const tooltipElement = event.currentTarget as HTMLElement;
+        const tooltipInstance = bootstrap.Tooltip.getInstance(tooltipElement);
+        tooltipInstance?.hide();
+    }
+}
+
   // Função para filtrar pacientes
   pacientesFiltrados() {
     return this.pacientes.filter(paciente => paciente.nome.toLowerCase().includes(this.filtroNome.toLowerCase()));
@@ -76,11 +84,12 @@ export class ConsultarPacienteComponent implements AfterViewInit  {
   }
 
   // Função para excluir o paciente
-  excluirPaciente(paciente: any): void {
+  excluirPaciente(paciente: any, event: Event): void {
     const confirmDelete = confirm(`Você tem certeza que deseja excluir o paciente ${paciente.nome}?`);
     if (confirmDelete) {
       this.pacientes = this.pacientes.filter(p => p !== paciente);
       console.log('Paciente excluído:', paciente);
+      this.hideTooltip(event);
     }
   }
 }

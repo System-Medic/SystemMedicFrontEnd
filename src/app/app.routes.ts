@@ -11,6 +11,7 @@ import { CadastrarProfissionalComponent } from './modules/profissional/pages/cad
 import { ConsultarProfissionalComponent } from './modules/profissional/pages/consultar-profissional/consultar-profissional.component';
 import { EditarProfissionalComponent } from './modules/profissional/pages/editar-profissional/editar-profissional.component';
 import { ConsultaOnlineComponent } from './modules/telemedicina/pages/consulta-online/consulta-online.component';
+import { ToastAlertComponent } from './shared/components/toast-alert/toast-alert.component';
 
 
 export const routes: Routes = [
@@ -35,5 +36,9 @@ export const routes: Routes = [
 
   //Telemedicina
   { path: 'consulta-online', component: ConsultaOnlineComponent },
+
+  //Toast
+  { path: 'toast', component: ToastAlertComponent },
+  
   
 ];

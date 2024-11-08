@@ -1,98 +1,105 @@
 <div class="d-flex flex-row">
   <app-sidebar></app-sidebar>
   <div class="container mt-2">
-    
 
-    <div class="card shadow-sm p-4">
 
-    <h2 class="text-center mb-4">Realizar Agendamento</h2>
+    <div class="card shadow-lg p-4">
 
-    <form (ngSubmit)="onSubmit()" #agendamentoForm="ngForm">
-      
-      <div class="row mb-3">
-        <!-- Paciente -->
-        <div class="col-md-6">
-          <label for="paciente" class="form-label">Nome Profissional</label>
-          <input type="text" id="paciente" class="form-control" [(ngModel)]="agendamento.paciente" name="paciente" readonly/>
+      <h2 class="text-center mb-4">Realizar Agendamento</h2>
+
+      <form (ngSubmit)="onSubmit()" #agendamentoForm="ngForm">
+
+        <div class="row mb-3">
+          <!-- Paciente -->
+          <div class="col-md-6">
+            <label for="paciente" class="form-label">Nome Profissional</label>
+            <input type="text" id="paciente" class="form-control" [(ngModel)]="agendamento.paciente" name="paciente"
+              readonly />
+          </div>
+
+          <!-- Paciente -->
+          <div class="col-md-6">
+            <label for="paciente" class="form-label">Nome Paciente</label>
+            <input type="text" id="paciente" class="form-control" [(ngModel)]="agendamento.paciente" name="paciente"
+              readonly />
+          </div>
         </div>
 
-        <!-- Paciente -->
-        <div class="col-md-6">
-          <label for="paciente" class="form-label">Nome Paciente</label>
-          <input type="text" id="paciente" class="form-control" [(ngModel)]="agendamento.paciente" name="paciente" readonly/>
-        </div>
-      </div>
+        <!-- Email -->
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" id="email" class="form-control" [(ngModel)]="agendamento.email" name="email" readonly />
+          </div>
 
-      <!-- Email -->
-      <div class="row mb-3">
-        <div class="col-md-4">
-          <label for="email" class="form-label">E-mail</label>
-          <input type="email" id="email" class="form-control" [(ngModel)]="agendamento.email" name="email" readonly />
-        </div>
+          <!-- Telefone -->
+          <div class="col-md-4">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="number" id="telefone" class="form-control" [(ngModel)]="agendamento.telefone" name="telefone"
+              readonly />
+          </div>
 
-        <!-- Telefone -->
-        <div class="col-md-4">
-          <label for="telefone" class="form-label">Telefone</label>
-          <input type="number" id="telefone" class="form-control" [(ngModel)]="agendamento.telefone" name="telefone" readonly />
-        </div>
-
-        <!-- Data de Nascimento -->
-        <div class="col-md-4">
-          <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-          <input type="date" id="dataNascimento" class="form-control" [(ngModel)]="agendamento.dataNascimento" name="dataNascimento" readonly />
-        </div>
-      </div>
-
-      <!-- Data -->
-      <div class="row mb-3">
-        <div class="col-md-4">
-          <label for="data" class="form-label">Data do Agendamento</label>
-          <input type="date" id="data" class="form-control" [(ngModel)]="agendamento.data" name="data" required />
+          <!-- Data de Nascimento -->
+          <div class="col-md-4">
+            <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+            <input type="date" id="dataNascimento" class="form-control" [(ngModel)]="agendamento.dataNascimento"
+              name="dataNascimento" readonly />
+          </div>
         </div>
 
-        <!-- Horário de Início -->
-        <div class="col-md-4">
-          <label for="inicio" class="form-label">Horário de Início</label>
-          <input type="time" id="inicio" class="form-control" [(ngModel)]="agendamento.inicio" name="inicio" required />
+        <!-- Data -->
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="data" class="form-label">Data do Agendamento</label>
+            <input type="date" id="data" class="form-control" [(ngModel)]="agendamento.data" name="data" required />
+          </div>
+
+          <!-- Horário de Início -->
+          <div class="col-md-4">
+            <label for="inicio" class="form-label">Horário de Início</label>
+            <input type="time" id="inicio" class="form-control" [(ngModel)]="agendamento.inicio" name="inicio"
+              required />
+          </div>
+
+          <!-- Horário de Fim -->
+          <div class="col-md-4">
+            <label for="fim" class="form-label">Horário do Fim</label>
+            <input type="time" id="fim" class="form-control" [(ngModel)]="agendamento.fim" name="fim" required />
+          </div>
         </div>
 
-        <!-- Horário de Fim -->
-        <div class="col-md-4">
-          <label for="fim" class="form-label">Horário do Fim</label>
-          <input type="time" id="fim" class="form-control" [(ngModel)]="agendamento.fim" name="fim" required />
+        <!-- Diagnóstico -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="diagnostico" class="form-label">Diagnóstico do Paciente</label>
+            <textarea id="diagnostico" class="form-control" [(ngModel)]="agendamento.diagnostico" name="diagnostico"
+              rows="4"></textarea>
+          </div>
+
+          <!-- Observação -->
+          <div class="col-md-6">
+            <label for="observacao" class="form-label">Observação</label>
+            <textarea id="observacao" class="form-control" [(ngModel)]="agendamento.observacao" name="observacao"
+              rows="4"></textarea>
+          </div>
         </div>
-      </div>
 
-      <!-- Diagnóstico -->
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label for="diagnostico" class="form-label">Diagnóstico do Paciente</label>
-          <textarea id="diagnostico" class="form-control" [(ngModel)]="agendamento.diagnostico" name="diagnostico" rows="4"></textarea>
+        <!-- Notificação -->
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="notificar" [(ngModel)]="agendamento.notificar"
+            name="notificar" />
+          <label class="form-check-label" for="notificar">
+            Notificar paciente por e-mail
+          </label>
         </div>
 
-        <!-- Observação -->
-        <div class="col-md-6">
-          <label for="observacao" class="form-label">Observação</label>
-          <textarea id="observacao" class="form-control" [(ngModel)]="agendamento.observacao" name="observacao" rows="4"></textarea>
+        <!-- Botão de Submissão -->
+        <div class="d-flex justify-content-center mt-4">
+          <button class="btn btn-primary w-100" type="submit" [disabled]="!agendamentoForm.form.valid">
+            Agendar Atendimento
+          </button>
         </div>
-      </div>
-
-      <!-- Notificação -->
-      <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" id="notificar" [(ngModel)]="agendamento.notificar"
-          name="notificar" />
-        <label class="form-check-label" for="notificar">
-          Notificar paciente por e-mail
-        </label>
-      </div>
-
-      <!-- Botão de Submissão -->
-      <div class="d-flex justify-content-center mt-4">
-        <button class="btn btn-primary w-100" type="submit" [disabled]="!agendamentoForm.form.valid">
-          Agendar Atendimento
-        </button>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
-</div>
 </div>

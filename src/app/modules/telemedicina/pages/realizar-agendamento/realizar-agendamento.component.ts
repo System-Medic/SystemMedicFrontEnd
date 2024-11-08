@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.component';
+import { ToastAlertComponent } from '../../../../shared/components/toast-alert/toast-alert.component';
+import { ToastrService } from 'ngx-toastr';
 
 interface Agendamento {
   profissional: string;
@@ -20,7 +22,7 @@ interface Agendamento {
 @Component({
   selector: 'app-realizar-agendamento',
   standalone: true,
-  imports: [FormsModule, SidebarComponent],
+  imports: [FormsModule, SidebarComponent, ToastAlertComponent],
   templateUrl: './realizar-agendamento.component.html',
   styleUrls: ['./realizar-agendamento.component.css']
 })
@@ -53,7 +55,7 @@ export class RealizarAgendamentoComponent implements OnInit {
     notificar: false
   };
 
-  constructor(private route: ActivatedRoute, ) { }
+  constructor(private route: ActivatedRoute, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     // Pegue o id do paciente da URL
@@ -76,10 +78,9 @@ export class RealizarAgendamentoComponent implements OnInit {
     if (this.isValidTimeRange()) {
       console.log('Agendamento realizado:', this.agendamento);
       // Mostra o toast de sucesso
-      
+        this.toastr.success('Agendamento realizado', 'Successo', {closeButton:true})
     } else {
-      // Mostra o toast de erro
-      
+      this.toastr.error('O horário do fim não pode ser menor que do início', 'Erro', {closeButton:true})
     }
   }
   

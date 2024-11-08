@@ -2,9 +2,9 @@
   <app-sidebar></app-sidebar>
 
   <div class="container mt-2">
-    <div class="card shadow-sm p-4">
+    <div class="card shadow-lg p-4">
 
-      <h2 class="text-center mb-4">Consultar Pacientes</h2>
+      <h3 class="text-center mb-4">Consultar Pacientes</h3>
 
       <!-- Filtro de pesquisa -->
       <div>
@@ -34,18 +34,18 @@
             <td>{{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</td>
             <td class="action-buttons">
               <button [routerLink]="['/editar-paciente', paciente.id]" class="btn btn-icons btn-hover btn-warning btn-sm"
-                data-bs-toggle="tooltip" title="Editar">
+                data-bs-toggle="tooltip" title="Editar" (click)="hideTooltip($event)">
                 <i class="fas fa-pencil-alt"></i>
               </button>
               <button [routerLink]="['/visualizar-prontuario', paciente.id]" class="btn btn-icons btn-hover btn-primary btn-sm"
-                data-bs-toggle="tooltip" title="Prontuários">
+                data-bs-toggle="tooltip" title="Prontuários" (click)="hideTooltip($event)">
                 <i class="fas fa-file-alt"></i>
               </button>
               <button [routerLink]="['/realizar-agendamento', paciente.id]" class="btn btn-icons btn-hover btn-success btn-sm"
-                data-bs-toggle="tooltip" title="Agendamento">
+                data-bs-toggle="tooltip" title="Agendamento" (click)="hideTooltip($event)">
                 <i class="fas fa-calendar-alt"></i>
               </button>
-              <button (click)="excluirPaciente(paciente)" class="btn btn-icons btn-hover btn-danger btn-sm" data-bs-toggle="tooltip"
+              <button (click)="excluirPaciente(paciente, $event)" class="btn btn-icons btn-hover btn-danger btn-sm" data-bs-toggle="tooltip"
                 title="Excluir">
                 <i class="fas fa-trash-alt"></i>
               </button>
