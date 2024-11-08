@@ -28,3 +28,12 @@
     justify-content: start !important;
     gap: 10px !important;
   }
+
+  .container {
+    max-width: auto !important;
+    margin: 0 auto !important;
+  }
+  
+  button[type="submit"] {
+    max-width: 200px !important;
+  }

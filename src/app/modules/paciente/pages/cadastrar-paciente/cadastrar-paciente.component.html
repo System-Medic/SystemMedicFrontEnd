@@ -3,17 +3,20 @@
 
   <div class="container mt-5">
     <div class="card shadow-sm p-4">
+
       <h2 class="text-center mb-4">Cadastro de Paciente</h2>
+
       <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="nome" class="form-label"><i class="bi bi-person"></i> Nome</label>
             <input id="nome" formControlName="nome" class="form-control" type="text"
-              placeholder="Digite o nome completo" />
+              placeholder="Digite o nome completo" required/>
           </div>
           <div class="col-md-6">
             <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
-            <input id="email" formControlName="email" class="form-control" type="email" placeholder="Digite o email" />
+            <input id="email" formControlName="email" class="form-control" type="email" placeholder="Digite o email" required/>
           </div>
         </div>
 
@@ -21,18 +24,20 @@
           <div class="col-md-6">
             <label for="telefone" class="form-label"><i class="bi bi-telephone"></i> Telefone</label>
             <input id="telefone" formControlName="telefone" class="form-control" type="tel"
-              placeholder="Digite o telefone" />
+              placeholder="Digite o telefone" required/>
           </div>
 
           <div class="col-md-6">
             <label for="dataNascimento" class="form-label"><i class="bi bi-calendar"></i> Data de Nascimento</label>
-            <input id="dataNascimento" formControlName="dataNascimento" class="form-control" type="date" />
+            <input id="dataNascimento" formControlName="dataNascimento" class="form-control" type="date" required/>
           </div>
         </div>
 
-        <button class="btn-blue d-block mx-auto" style="width: 50%" type="submit" [disabled]="cadastroForm.invalid">
+        <div class="d-flex justify-content-center mt-4">
+        <button class="btn btn-blue w-100" type="submit" [disabled]="cadastroForm.invalid">
           Cadastrar
         </button>
+      </div>
       </form>
     </div>
   </div>
