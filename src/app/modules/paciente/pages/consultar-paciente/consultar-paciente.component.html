@@ -2,7 +2,7 @@
   <app-sidebar></app-sidebar>
 
   <div class="container mt-2">
-    <div class="card shadow- p-4">
+    <div class="card shadow-sm p-4">
 
       <h2 class="text-center mb-4">Consultar Pacientes</h2>
 
@@ -33,19 +33,19 @@
             <td>{{ paciente.telefone }}</td>
             <td>{{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</td>
             <td class="action-buttons">
-              <button [routerLink]="['/editar-paciente', paciente.id]" class="btn btn-hover btn-orange btn-sm"
+              <button [routerLink]="['/editar-paciente', paciente.id]" class="btn btn-icons btn-hover btn-orange btn-sm"
                 data-bs-toggle="tooltip" title="Editar">
                 <i class="fas fa-pencil-alt"></i>
               </button>
-              <button [routerLink]="['/visualizar-prontuario', paciente.id]" class="btn btn-hover btn-blue btn-sm"
+              <button [routerLink]="['/visualizar-prontuario', paciente.id]" class="btn btn-icons btn-hover btn-blue btn-sm"
                 data-bs-toggle="tooltip" title="Prontuários">
                 <i class="fas fa-file-alt"></i>
               </button>
-              <button [routerLink]="['/realizar-agendamento', paciente.id]" class="btn btn-hover btn-green btn-sm"
+              <button [routerLink]="['/realizar-agendamento', paciente.id]" class="btn btn-icons btn-hover btn-green btn-sm"
                 data-bs-toggle="tooltip" title="Agendamento">
                 <i class="fas fa-calendar-alt"></i>
               </button>
-              <button (click)="excluirPaciente(paciente)" class="btn btn-hover btn-red btn-sm" data-bs-toggle="tooltip"
+              <button (click)="excluirPaciente(paciente)" class="btn btn-icons btn-hover btn-red btn-sm" data-bs-toggle="tooltip"
                 title="Excluir">
                 <i class="fas fa-trash-alt"></i>
               </button>
