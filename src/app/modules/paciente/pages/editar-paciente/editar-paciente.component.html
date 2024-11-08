@@ -1,10 +1,13 @@
 <div class="d-flex flex-row">
   <app-sidebar></app-sidebar>
 
-  <div class="container mt-5">
+  <div class="container mt-2">
     <div class="card shadow-sm p-4">
+
       <h2 class="text-center mb-4">Editar Paciente</h2>
+
       <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+        
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="nome" class="form-label"><i class="bi bi-person"></i> Nome</label>
