@@ -1,13 +1,13 @@
 <div class="d-flex flw-row">
   <app-sidebar></app-sidebar>
 
-  <div class="container mt-5">
+  <div class="container mt-2">
     <div class="card shadow- p-4">
 
     <h2 class="text-center mb-4">Consultar Profissionais</h2>
 
     <!-- Filtro de pesquisa -->
-    <div class="mb-3 mt-4">
+    <div>
       <label for="nomeFiltro" class="form-label">Filtrar por Nome</label>
       <input id="nomeFiltro" type="text" class="form-control" [(ngModel)]="filtroNome"
         placeholder="Digite o nome do profissional" />
@@ -33,10 +33,10 @@
           <td>{{ profissional.telefone }}</td>
           <td>{{ profissional.dataNascimento | date: 'dd/MM/yyyy' }}</td>
           <td class="action-buttons">
-            <button [routerLink]="['/editar-profissional', profissional.id]" class="btn btn-hover btn-warning btn-sm">
+            <button [routerLink]="['/editar-profissional', profissional.id]" class="btn btn-hover btn-orange btn-sm">
               <i class="fas fa-pencil-alt"></i>
             </button>
-            <button (click)="excluirprofissional(profissional)" class="btn btn-hover btn-danger btn-sm">
+            <button (click)="excluirprofissional(profissional)" class="btn btn-hover btn-red btn-sm">
               <i class="fas fa-trash-alt"></i>
             </button>
           </td>
