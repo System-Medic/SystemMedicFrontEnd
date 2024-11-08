@@ -1,13 +1,13 @@
 <div class="d-flex flex-row">
   <app-sidebar></app-sidebar>
 
-  <div class="container mt-5">
+  <div class="container mt-2">
     <div class="card shadow- p-4">
 
       <h2 class="text-center mb-4">Consultar Pacientes</h2>
 
       <!-- Filtro de pesquisa -->
-      <div class="mb-3 mt-4">
+      <div>
         <label for="nomeFiltro" class="form-label">Filtrar por Nome</label>
         <input id="nomeFiltro" type="text" class="form-control" [(ngModel)]="filtroNome"
           placeholder="Digite o nome do paciente" />
