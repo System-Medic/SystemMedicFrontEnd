@@ -1,24 +1,38 @@
-<div class="login-container">
-  <h2>Login</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="input-group">
-      <span class="input-group-text"><i class="bi bi-person"></i></span>
-      <input id="username" formControlName="username" type="text" class="form-control"
-        placeholder="Digite seu usuário" />
-    </div>
-    <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
-      <small class="text-danger">O campo usuário é obrigatório.</small>
-    </div>
+<div class="container mt-2 w-25">
+  <div class="card shadow-sm p-4">
+    <h2 class="text-center mb-4">Login</h2>
 
-    <div class="input-group mt-3">
-      <span class="input-group-text"><i class="bi bi-lock"></i></span>
-      <input id="password" formControlName="password" type="password" class="form-control"
-        placeholder="Digite sua senha" />
-    </div>
-    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-      <small class="text-danger">O campo senha é obrigatório.</small>
-    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-    <button type="submit" class="btn btn-primary mt-4" [disabled]="loginForm.invalid">Entrar</button>
-  </form>
+      <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-person"></i></span>
+        <input id="username" formControlName="username" type="text" class="form-control"
+          placeholder="Digite seu usuário" />
+      </div>
+      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+        <small class="text-danger">O campo usuário é obrigatório.</small>
+      </div>
+
+      <div class="input-group mt-3">
+        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+        <input id="password" formControlName="password" type="password" class="form-control"
+          placeholder="Digite sua senha" />
+      </div>
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        <small class="text-danger">O campo senha é obrigatório.</small>
+      </div>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="notificar"
+          name="notificar" />
+        <label class="form-check-label" for="notificar">
+          Lembrar senha
+        </label>
+      </div>
+
+      <div class="d-flex justify-content-center mt-4">
+        <button type="submit" class="btn btn-blue w-100" [disabled]="loginForm.invalid">Entrar</button>
+      </div>
+    </form>
+  </div>
 </div>
