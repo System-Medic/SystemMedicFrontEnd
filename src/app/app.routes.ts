@@ -12,6 +12,9 @@ import { ConsultarProfissionalComponent } from './modules/profissional/pages/con
 import { EditarProfissionalComponent } from './modules/profissional/pages/editar-profissional/editar-profissional.component';
 import { ConsultaOnlineComponent } from './modules/telemedicina/pages/consulta-online/consulta-online.component';
 import { ToastAlertComponent } from './shared/components/toast-alert/toast-alert.component';
+import { CadastrarUsuarioComponent } from './modules/usuario/pages/cadastrar-usuario/cadastrar-usuario.component';
+import { EditarUsuarioComponent } from './modules/usuario/pages/editar-usuario/editar-usuario.component';
+import { ConsultarUsuarioComponent } from './modules/usuario/pages/consultar-usuario/consultar-usuario.component';
 
 
 export const routes: Routes = [
@@ -34,11 +37,14 @@ export const routes: Routes = [
   { path: 'editar-profissional/:id', component: EditarProfissionalComponent },
   { path: 'consultar-profissional', component: ConsultarProfissionalComponent },
 
+  //Usuario
+  { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent },
+  { path: 'editar-usuario/:id', component: EditarUsuarioComponent },
+  { path: 'consultar-usuario', component: ConsultarUsuarioComponent },
+
   //Telemedicina
   { path: 'consulta-online', component: ConsultaOnlineComponent },
 
   //Toast
   { path: 'toast', component: ToastAlertComponent },
-  
-  
 ];

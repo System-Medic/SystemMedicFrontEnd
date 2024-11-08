@@ -1,0 +1,59 @@
+<div class="d-flex flex-row">
+    <app-sidebar></app-sidebar>
+  
+    <div class="container mt-2">
+      <div class="card shadow-lg p-4">
+  
+        <h3 class="text-center mb-4">Consultar Usuários</h3>
+  
+        <!-- Filtro de pesquisa -->
+        <div>
+          <label for="nomeFiltro" class="form-label">Filtrar por Nome</label>
+          <input id="nomeFiltro" type="text" class="form-control" [(ngModel)]="filtroNome"
+            placeholder="Digite o nome do paciente" />
+        </div>
+  
+        <!-- Tabela de pacientes -->
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Telefone</th>
+              <th>Data de Nascimento</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let paciente of usuariosPaginaAtual(); let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ paciente.nome }}</td>
+              <td>{{ paciente.email }}</td>
+              <td>{{ paciente.telefone }}</td>
+              <td>{{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</td>
+              <td class="action-buttons">
+                <button [routerLink]="['/editar-usuario', paciente.id]" class="btn btn-icons btn-hover btn-warning btn-sm"
+                  data-bs-toggle="tooltip" title="Editar" (click)="hideTooltip($event)">
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button (click)="excluirUsuario(paciente, $event)" class="btn btn-icons btn-hover btn-danger btn-sm" data-bs-toggle="tooltip"
+                  title="Excluir">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <!-- Controles de Navegação -->
+        <div class="pagination-controls text-center mt-4">
+          <button (click)="prevPage()" class="btn btn-danger" [disabled]="currentPage === 1">Anterior</button>
+          <span class="mx-3">Página {{ currentPage }}</span>
+          <button (click)="nextPage()" class="btn btn-primary"
+            [disabled]="currentPage * pageSize >= usuariosFiltrados().length">Próxima</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

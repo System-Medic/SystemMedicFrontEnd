@@ -8,16 +8,15 @@ import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.
 declare var bootstrap: any; 
 
 @Component({
-  selector: 'app-consultar-paciente',
+  selector: 'app-consultar-usuario',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule, SidebarComponent, FormsModule],
-  templateUrl: './consultar-paciente.component.html',
-  styleUrls: ['./consultar-paciente.component.css']
+  templateUrl: './consultar-usuario.component.html',
+  styleUrl: './consultar-usuario.component.css'
 })
+export class ConsultarUsuarioComponent implements AfterViewInit  {
 
-export class ConsultarPacienteComponent implements AfterViewInit  {
-
-  pacientes: any[] = []; // Array de pacientes
+  usuarios: any[] = []; // Array de pacientes
   filtroNome: string = ''; // Valor do filtro de nome
   pageSize: number = 10; // Número de pacientes por página
   currentPage: number = 1; // Página atual
@@ -25,7 +24,7 @@ export class ConsultarPacienteComponent implements AfterViewInit  {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    this.pacientes = [
+    this.usuarios = [
       { id: 1, nome: 'João Silva', email: 'joao@email.com', telefone: '123456789', dataNascimento: '1985-02-20' },
       { id: 2, nome: 'Maria Oliveira', email: 'maria@email.com', telefone: '987654321', dataNascimento: '1990-07-15' },
       { id: 3, nome: 'Carlos Souza', email: 'carlos@email.com', telefone: '564738291', dataNascimento: '1980-11-05' },
@@ -58,16 +57,16 @@ export class ConsultarPacienteComponent implements AfterViewInit  {
     }
 }
 
-  // Função para filtrar pacientes
-  pacientesFiltrados() {
-    return this.pacientes.filter(paciente => paciente.nome.toLowerCase().includes(this.filtroNome.toLowerCase()));
+  // Função para filtrar usuarios
+  usuariosFiltrados() {
+    return this.usuarios.filter(usuario => usuario.nome.toLowerCase().includes(this.filtroNome.toLowerCase()));
   }
 
-  // Função para retornar os pacientes da página atual
-  pacientesPaginaAtual() {
+  // Função para retornar os usuarios da página atual
+  usuariosPaginaAtual() {
     const startIndex = (this.currentPage - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
-    return this.pacientesFiltrados().slice(startIndex, endIndex);
+    return this.usuariosFiltrados().slice(startIndex, endIndex);
   }
 
   // Função para mover para a página anterior
@@ -79,18 +78,19 @@ export class ConsultarPacienteComponent implements AfterViewInit  {
 
   // Função para mover para a próxima página
   nextPage() {
-    if (this.currentPage * this.pageSize < this.pacientesFiltrados().length) {
+    if (this.currentPage * this.pageSize < this.usuariosFiltrados().length) {
       this.currentPage++;
     }
   }
 
-  // Função para excluir o paciente
-  excluirPaciente(paciente: any, event: Event): void {
-    const confirmDelete = confirm(`Você tem certeza que deseja excluir o paciente ${paciente.nome}?`);
+  // Função para excluir o usuarios
+  excluirUsuario(usuario: any, event: Event): void {
+    const confirmDelete = confirm(`Você tem certeza que deseja excluir o usuário ${usuario.nome}?`);
     if (confirmDelete) {
-      this.pacientes = this.pacientes.filter(p => p !== paciente);
-      console.log('Paciente excluído:', paciente);
+      this.usuarios = this.usuarios.filter(p => p !== usuario);
+      console.log('Usuário excluído:', usuario);
       this.hideTooltip(event);
     }
   }
 }
+

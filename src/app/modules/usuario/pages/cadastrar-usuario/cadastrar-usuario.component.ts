@@ -5,13 +5,13 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from "../../../../shared/components/sidebar/sidebar.component";
 
 @Component({
-  selector: 'app-cadastrar-paciente',
+  selector: 'app-cadastrar-usuario',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule, SidebarComponent],
-  templateUrl: './cadastrar-paciente.component.html',
-  styleUrls: ['./cadastrar-paciente.component.css']
+  templateUrl: './cadastrar-usuario.component.html',
+  styleUrl: './cadastrar-usuario.component.css'
 })
-export class CadastrarPacienteComponent implements OnInit {
+export class CadastrarUsuarioComponent implements OnInit {
   cadastroForm: FormGroup;
 
   constructor(private fb: FormBuilder) {

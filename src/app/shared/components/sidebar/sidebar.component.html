@@ -55,6 +55,25 @@
           <i class="bi bi-camera-video-fill"></i> Consulta On-line
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="toggleUsuario()">
+          <i class="bi bi-person-fill-gear"></i> Usuário
+        </a>
+        <ul class="nav flex-column ms-3" *ngIf="isUsuarioOpen">
+          <li class="nav-item">
+            <a class="nav-link small-text" routerLink="/cadastrar-usuario">
+              <i class="bi bi-person-plus"></i>
+              Cadastrar Usuário
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link small-text" routerLink="/consultar-usuario">
+              <i class="bi bi-search navSubItem"></i>
+              Consultar Usuário
+            </a>
+          </li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>

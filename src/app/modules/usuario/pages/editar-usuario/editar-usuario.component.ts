@@ -5,13 +5,13 @@ import { RouterModule, ActivatedRoute } from '@angular/router';
 import { SidebarComponent } from "../../../../shared/components/sidebar/sidebar.component";
 
 @Component({
-  selector: 'app-editar-profissional',
+  selector: 'app-editar-usuario',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule, SidebarComponent],
-  templateUrl: './editar-profissional.component.html',
-  styleUrls: ['./editar-profissional.component.css']
+  templateUrl: './editar-usuario.component.html',
+  styleUrl: './editar-usuario.component.css'
 })
-export class EditarProfissionalComponent implements OnInit {
+export class EditarUsuarioComponent implements OnInit {
   cadastroForm: FormGroup;
   profissionalId: string | null | undefined;
 

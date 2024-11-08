@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
 export class SidebarComponent {
   isPacienteOpen = false;
   isProfissionalOpen = false;
+  isUsuarioOpen = false;
 
   togglePaciente() {
     this.isPacienteOpen = !this.isPacienteOpen;
@@ -19,6 +20,10 @@ export class SidebarComponent {
 
   toggleProfissional() {
     this.isProfissionalOpen = !this.isProfissionalOpen;
+  }
+
+  toggleUsuario() {
+    this.isUsuarioOpen = !this.isUsuarioOpen;
   }
 
 }
